@@ -1,0 +1,199 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+body {
+  background-color: #f6eded;
+  color: #222;
+  min-height: 100vh;
+}
+
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px 16px 32px;
+  background: #fff;
+  border-bottom: 2px solid #eee;
+  position: relative;
+}
+.profile-area {
+  flex: 0 0 auto;
+}
+.profile-icon img {
+  border-radius: 50%;
+  background: #e6d6ee;
+  padding: 4px;
+}
+.search-bar-center {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.search-bar-center input {
+  padding: 8px 16px;
+  border: 1px solid #d1c3e0;
+  border-radius: 20px;
+  background: #f6eded;
+  min-width: 220px;
+}
+.search-bar-center .add-btn {
+  background: #e6d6ee;
+  border: none;
+  border-radius: 50%;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #7c4d9b;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.search-bar-center .add-btn:hover {
+  background: #d1c3e0;
+}
+.menu-area {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.menu-area a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.menu-area a:hover {
+  color: #a16dc2;
+}
+.btn-sair {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: background 0.2s;
+}
+.btn-sair:hover {
+  background: #a16dc2;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 120px;
+  background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'), #e6d6ee;
+  margin-bottom: 0;
+}
+
+/* MAIN */
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  min-height: 600px;
+}
+
+/* INÍCIO */
+.container-inicio {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: -60px;
+  min-height: 400px;
+}
+.agenda-img-area {
+  flex: 0 0 320px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-right: 32px;
+  margin-top: 40px;
+}
+.agenda-img {
+  width: 220px;
+  height: auto;
+  display: block;
+}
+.agenda-content-area {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 60px;
+}
+.agenda-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #a16dc2;
+  letter-spacing: 2px;
+  margin-bottom: 0.2em;
+}
+.agenda-subtitle {
+  font-size: 1.5rem;
+  color: #bfa6d6;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* CALENDÁRIO */
+.calendar-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 60px auto 0 auto;
+  background: #f3ecf7;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px 0 #e6d6ee;
+  padding: 32px 32px 24px 32px;
+  max-width: 480px;
+}
+.calendar-area h2 {
+  color: #a16dc2;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+}
+.calendar-area input[type="date"] {
+  padding: 10px 18px;
+  border: 1px solid #d1c3e0;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 1.1rem;
+  color: #7c4d9b;
+  margin-bottom: 12px;
+}
+.calendar-area p {
+  color: #7c4d9b;
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* PERFIL */
+.profile-placeholder {
+  margin: 40px auto;
+  background: #f3ecf7;
+  border-radius: 18px;
+  padding: 32px 32px 24px 32px;
+  max-width: 480px;
+  color: #7c4d9b;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 12px 0 #e6d6ee;
+}
+
+
