@@ -1,75 +1,102 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agenda Escolar</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="profile-area">
-      <div class="profile-icon" id="profileIcon" style="cursor:pointer;">
-        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Avatar" width="40" height="40">
-      </div>
-    </div>
-    <div class="search-bar-center">
-      <input type="text" placeholder="Pesquisar...">
-      <button class="add-btn">+</button>
-    </div>
-    <nav class="menu-area">
-      <a href="#" id="navInicio">Início</a>
-      <a href="#" id="navCalendario">Calendário</a>
-      <a href="#" id="navPerfil">Perfil</a>
-      <button class="btn-sair">Sair</button>
-    </nav>
-  </header>
+/* Definição de Variáveis Profissionais */
+:root {
+    --primary-blue: #60a5fa;
+    --primary-purple: #a855f7;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --glass-effect: rgba(255, 255, 255, 0.05);
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --font-base: 'Poppins', sans-serif;
+}
 
-  <!-- Banner ou faixa colorida -->
-  <div class="banner"></div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-base);
+}
 
-  <!-- MAIN -->
-  <main>
-    <!-- Tela Início -->
-    <section id="telaInicio">
-      <div class="container-inicio">
-        <div class="agenda-img-area">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Agenda" class="agenda-img">
-        </div>
-        <div class="agenda-content-area">
-          <h1 class="agenda-title">AGENDA</h1>
-          <h2 class="agenda-subtitle">ESCOLAR</h2>
-        </div>
-      </div>
-    </section>
+body {
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
 
-    <!-- Tela Calendário -->
-    <section id="telaCalendario" style="display:none;">
-      <div class="calendar-area">
-        <div class="calendar-theme-text" style="margin-bottom:18px; color:#a16dc2; font-size:1.1rem; font-weight:500; text-align:left;">
-          <strong>Outubro – Semana da Criança!</strong><br>
-          Durante a semana, cada criança terá um dia especial:<br><br>
-          <strong>Segunda (06/10)</strong> – Uma fruta especial: cada criança traz uma fruta diferente para compartilhar ou experimentar.<br>
-          <strong>Terça (07/10)</strong> – Dia de fantasia: cada criança vem fantasiada do seu personagem favorito.<br>
-          <strong>Quarta (08/10)</strong> – Cabelo maluco: penteados divertidos e criativos; pode trazer acessórios para o cabelo.<br>
-          <strong>Quinta (09/10)</strong> – Brinquedo especial: cada criança traz seu brinquedo favorito para mostrar aos colegas e brincar juntos.<br>
-          <strong>Sexta (10/10)</strong> – Dia colorido: cada criança veste roupas coloridas ou uma cor específica; atividades lúdicas e pintura de rosto.
-        </div>
-        <h2>Selecione a data</h2>
-        <input type="date" id="datePicker">
-        <p id="selectedDate"></p>
-        <!-- Aqui você pode inserir um calendário customizado futuramente -->
-      </div>
-    </section>
+.container {
+    background: var(--glass-effect);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
 
-    <!-- Tela Perfil -->
-    <section id="telaPerfil" style="display:none;">
-      <h2>Perfil do Usuário</h2>
-      <div class="profile-placeholder">Informações do perfil aqui.</div>
-    </section>
-  </main>
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, var(--primary-blue), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.description {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tag {
+    background: rgba(96, 165, 250, 0.1);
+    color: var(--primary-blue);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    font-weight: 600;
+}
+
+.btn-github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: white;
+    color: #0f172a;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.btn-github:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    background: #f1f5f9;
+}
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+footer p {
+    color: #64748b;
+    font-size: 0.85rem;
+}
