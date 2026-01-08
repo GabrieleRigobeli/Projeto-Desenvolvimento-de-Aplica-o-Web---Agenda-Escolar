@@ -1,102 +1,115 @@
-/* Definição de Variáveis Profissionais */
 :root {
-    --primary-blue: #60a5fa;
-    --primary-purple: #a855f7;
-    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    --glass-effect: rgba(255, 255, 255, 0.05);
-    --text-main: #ffffff;
-    --text-muted: #94a3b8;
-    --font-base: 'Poppins', sans-serif;
+    --purple-primary: #a16dc2;
+    --purple-dark: #8a59ab;
+    --bg-gray: #f4f7f6;
+    --white: #ffffff;
+    --text-dark: #333;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-base);
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: var(--bg-gradient);
-    color: var(--text-main);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
 }
 
-.container {
-    background: var(--glass-effect);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 24px;
-    text-align: center;
-    max-width: 500px;
+/* Header Estilizado */
+.header {
+    background: var(--white);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.search-bar-center {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.search-bar-center input {
     width: 100%;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, var(--primary-blue), var(--primary-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.description {
-    color: var(--text-muted);
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.tag {
-    background: rgba(96, 165, 250, 0.1);
-    color: var(--primary-blue);
-    padding: 5px 15px;
+    padding: 10px;
     border-radius: 20px;
-    font-size: 0.8rem;
-    border: 1px solid rgba(96, 165, 250, 0.2);
-    font-weight: 600;
+    border: 1px solid #ddd;
+    outline: none;
 }
 
-.btn-github {
+.add-btn {
+    background: var(--purple-primary);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.add-btn:hover { background: var(--purple-dark); }
+
+.menu-area a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.btn-sair {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Banner e Conteúdo */
+.banner-color {
+    height: 5px;
+    background: linear-gradient(to right, var(--purple-primary), var(--purple-dark));
+}
+
+.container-inicio {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    height: 70vh;
+}
+
+.agenda-img { width: 150px; margin-bottom: 20px; }
+
+.agenda-title { font-size: 3rem; color: var(--purple-primary); letter-spacing: 5px; }
+
+.agenda-subtitle { font-size: 1.5rem; color: #777; }
+
+/* Cards do Calendário */
+.event-card {
     background: white;
-    color: #0f172a;
-    padding: 15px 30px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-left: 8px solid var(--purple-primary);
+    box-shadow: var(--shadow);
 }
 
-.btn-github:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    background: #f1f5f9;
-}
+.event-list { list-style: none; margin-top: 15px; text-align: left; }
+.event-list li { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px dashed #eee; }
 
-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-}
-
-footer p {
-    color: #64748b;
-    font-size: 0.85rem;
-}
+.hidden { display: none; }
