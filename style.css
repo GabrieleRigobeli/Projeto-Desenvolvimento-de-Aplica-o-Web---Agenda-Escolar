@@ -1,10 +1,10 @@
+/* Variáveis para facilitar o ajuste de cores */
 :root {
-    --purple-primary: #a16dc2;
-    --purple-dark: #8a59ab;
-    --bg-gray: #f4f7f6;
+    --primary-purple: #6c5ce7;
+    --dark-blue: #0f172a;
     --white: #ffffff;
-    --text-dark: #333;
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --gray-light: #f8f9fa;
+    --glass: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -15,23 +15,35 @@
 }
 
 body {
-    background-color: var(--bg-gray);
-    color: var(--text-dark);
+    background-color: var(--dark-blue);
+    color: var(--white);
+    overflow-x: hidden;
 }
 
-/* Header Estilizado */
+/* Ajustando o Cabeçalho */
 .header {
-    background: var(--white);
-    padding: 15px 5%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--shadow);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
+/* RESOLVENDO O TAMANHO DA IMAGEM DO AVATAR */
+.profile-icon img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-purple);
+}
+
+/* Estilizando a busca e o botão + */
 .search-bar-center {
     display: flex;
     gap: 10px;
@@ -42,74 +54,79 @@ body {
 
 .search-bar-center input {
     width: 100%;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background: var(--glass);
+    color: white;
     outline: none;
 }
 
 .add-btn {
-    background: var(--purple-primary);
+    background: var(--primary-purple);
     color: white;
     border: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-.add-btn:hover { background: var(--purple-dark); }
-
+/* Menu de Navegação */
 .menu-area a {
+    color: #cbd5e1;
     text-decoration: none;
-    color: var(--text-dark);
     margin: 0 15px;
-    font-weight: 500;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.menu-area a:hover {
+    color: var(--primary-purple);
 }
 
 .btn-sair {
-    background: #ff4d4d;
+    background: #ef4444;
     color: white;
     border: none;
-    padding: 8px 18px;
-    border-radius: 8px;
+    padding: 8px 20px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
-/* Banner e Conteúdo */
-.banner-color {
-    height: 5px;
-    background: linear-gradient(to right, var(--purple-primary), var(--purple-dark));
-}
-
+/* TELA PRINCIPAL - AJUSTANDO O CONTEÚDO CENTRAL */
 .container-inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh;
+    min-height: 80vh;
+    text-align: center;
 }
 
-.agenda-img { width: 150px; margin-bottom: 20px; }
-
-.agenda-title { font-size: 3rem; color: var(--purple-primary); letter-spacing: 5px; }
-
-.agenda-subtitle { font-size: 1.5rem; color: #777; }
-
-/* Cards do Calendário */
-.event-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 600px;
-    border-left: 8px solid var(--purple-primary);
-    box-shadow: var(--shadow);
+/* RESOLVENDO O TAMANHO DA IMAGEM DA AGENDA */
+.agenda-img {
+    width: 200px; /* Tamanho controlado para não ocupar a tela toda */
+    height: auto;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 20px rgba(108, 92, 231, 0.5));
 }
 
-.event-list { list-style: none; margin-top: 15px; text-align: left; }
-.event-list li { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px dashed #eee; }
+.agenda-title {
+    font-size: 4rem;
+    letter-spacing: 10px;
+    background: linear-gradient(to bottom, #a29bfe, #6c5ce7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.agenda-subtitle {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
 
 .hidden { display: none; }
